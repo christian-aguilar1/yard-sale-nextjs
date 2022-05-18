@@ -1,0 +1,49 @@
+@use "./vars";
+
+/*
+* mixin bgc-value is to pass the value of background-color property
+*/
+
+@mixin bgc-value($bgc-value) {
+  background-color: $bgc-value;
+}
+
+@mixin font-style($color, $fs, $fw) {
+  color: $color;
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+@mixin margin-top-button($mt-value) {
+  margin-top: $mt-value;
+}
+
+.primary-button {
+  @include bgc-value($hospital-green);
+  @include font-style($white, $md, bold);
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  height: 50px;
+  &--succes {
+    @include margin-top-button(14px);
+    margin-bottom: 30px;
+  }
+  &--position {
+    @include margin-top-button(14px);
+  }
+}
+
+.secondary-button {
+  @include bgc-value($white);
+  @include font-style($hospital-green, $md, bold);
+  border-radius: 8px;
+  border: 1px solid $hospital-green;
+  width: 100%;
+  cursor: pointer;
+  height: 50px;
+  &--position {
+    @include margin-top-button(14px);
+  }
+}

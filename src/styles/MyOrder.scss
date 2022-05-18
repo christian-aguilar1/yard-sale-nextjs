@@ -1,0 +1,101 @@
+@use "./vars";
+
+.MyOrder {
+  // animation: swipeLeft 0.26s ease;
+  background: white;
+  border: 1px solid var(--very-light-pink);
+  border-radius: 6px;
+  box-sizing: border-box;
+  height: auto;
+  max-height: 350px;
+  position: absolute;
+  bottom: auto;
+  top: 60px;
+  right: 0;
+  overflow-y: auto;
+  padding: 24px;
+  width: 360px;
+  z-index: 2;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #e5e5e5;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgb(199, 196, 196);
+  }
+  &::-webkit-scrollbar-thumb:active {
+    background: rgb(153, 150, 150);
+  }
+}
+
+@keyframes swipeLeft {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 360px;
+  }
+}
+
+.MyOrder__title-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+.MyOrder__title-container img {
+  transform: rotate(180deg);
+  margin-right: 14px;
+  cursor: pointer;
+}
+.MyOrder__title {
+  font-size: var(--lg);
+  font-weight: bold;
+  margin: 0;
+}
+
+.MyOrder__empty-cart {
+  color: var(--hospital-green);
+  text-align: center;
+  font-weight: bold;
+}
+
+.MyOrder__order {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: center;
+  background-color: var(--text-input-field);
+  margin-bottom: 24px;
+  border-radius: 8px;
+  padding: 0 24px;
+}
+.MyOrder__order p:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+}
+.MyOrder__order p span:nth-child(1) {
+  font-size: var(--md);
+  font-weight: bold;
+}
+.MyOrder__order p:nth-child(2) {
+  text-align: end;
+  font-weight: bold;
+}
+
+.primary-button {
+  background-color: var(--hospital-green);
+  border-radius: 8px;
+  border: none;
+  color: var(--white);
+  width: 100%;
+  cursor: pointer;
+  font-size: var(--md);
+  font-weight: bold;
+  height: 50px;
+}
+@media (max-width: 640px) {
+  .MyOrder {
+    width: 100%;
+  }
+}
