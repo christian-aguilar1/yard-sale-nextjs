@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Order.scss";
 
 import iconArow from "@icons/arrow.svg";
+import Image from "next/image";
 
 const Order = () => {
   return (
@@ -11,7 +12,7 @@ const Order = () => {
         <span>6 articles</span>
       </p>
       <p>$560.00</p>
-      <img src={iconArow} alt="arrow" />
+      <Image src={iconArow} alt="arrow" />
     </div>
   );
 };

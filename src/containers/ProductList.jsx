@@ -1,22 +1,25 @@
-import React from "react";
-import "../styles/ProductList.scss";
+import React from 'react';
 
-import ProductItem from "../components/ProductItem";
+import { useGetProducts } from '../hooks/useGetProducts';
 
-import { useGetProducts } from "../hooks/useGetProducts";
+import ProductItem from '../components/ProductItem';
 
-const API = "https://fakestoreapi.com/products";
+const API = 'https://fakestoreapi.com/products';
+
+import styles from '../styles/ProductList.module.scss';
 
 const ProductList = () => {
   const { products, dataStatus } = useGetProducts(API);
 
   return (
-    <section className="main-container">
-      <div className="ProductList">
-        {products.map((product) => (
-          <ProductItem key={product.id} product={product} />
-        ))}
-      </div>
+    <section className={styles["main-container"]}>
+      {dataStatus.loading ? <p>Cargando...</p>
+        : <div className={styles.ProductList}>
+            {products.map((product) => (
+              <ProductItem key={product.id} product={product} />
+            ))}
+          </div>
+      }
     </section>
   );
 };

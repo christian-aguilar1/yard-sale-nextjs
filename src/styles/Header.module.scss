@@ -1,15 +1,16 @@
-@use "./vars";
+@import "./_vars";
 
-nav {
+.Nav {
   display: flex;
   justify-content: space-between;
   padding: 0 51px;
   height: 60px;
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid $--white;
   box-sizing: border-box;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.046805);
 }
-.menu {
+
+.Menu {
   display: none;
   padding: 20px 0;
   cursor: pointer;
@@ -37,34 +38,40 @@ nav {
 .navbar-left ul li a,
 .navbar-right ul li a {
   text-decoration: none;
-  color: var(--very-light-pink);
-  border: 1px solid var(--white);
+  color: $--very-light-pink;
+  border: 1px solid $--white;
   padding: 8px;
   border-radius: 8px;
 }
 .navbar-left ul li a:hover,
 .navbar-right ul li a:hover {
-  color: var(--hospital-green);
-  border: 1px solid var(--hospital-green);
+  color: $--hospital-green;
+  border: 1px solid $--hospital-green;
 }
 
 .navbar-email {
+  border-radius: 8px;
   cursor: pointer;
-  font-size: var(--md);
+  font-size: $--md;
   font-weight: 300;
   line-height: 18px;
   margin-right: 26px;
   padding: 8px;
-  // width: 180px;
-  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+
+  p {
+    margin: 0;
+  }
+
   img {
     margin: 0 0 2px 10px;
   }
   &:hover {
-    color: var(--hospital-green);
-    border: 1px solid var(--hospital-green);
+    color: $--hospital-green;
+    border: 1px solid $--hospital-green;
     img {
-      color: var(--hospital-green);
+      color: $--hospital-green;
     }
   }
 }
@@ -76,9 +83,9 @@ nav {
 .navbar-shopping-cart div {
   width: 16px;
   height: 16px;
-  background-color: var(--hospital-green);
+  background-color: $--hospital-green;
   border-radius: 50%;
-  font-size: var(--sm);
+  font-size: $--sm;
   font-weight: bold;
   position: absolute;
   top: -6px;
@@ -89,7 +96,7 @@ nav {
 }
 
 @media (max-width: 640px) {
-  .menu {
+  .Menu {
     display: block;
   }
   .navbar-left ul {

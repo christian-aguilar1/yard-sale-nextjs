@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
-import "../styles/components/ProductItem.scss";
+import Image from "next/image";
+
+import { AppContext } from "../context/AppContext";
 
 import iconCartAdd from "@icons/bt_add_to_cart.svg";
 import iconCartAdded from "@icons/bt_added_to_cart.svg";
 
-import { AppContext } from "../context/AppContext";
+import styles from "../styles/components/ProductItem.module.scss";
 
 const ProductItem = ({ product }) => {
   const { addToCart } = useContext(AppContext);
@@ -16,23 +18,25 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <div className="ProductItem">
-      <img src={product.image} alt={product.title} />
-      <div className="product-info">
+    <div className={styles.ProductItem}>
+      <div className={styles.ProductImage}>
+        <Image src={product.image} alt={product.title} width={190} height={240} />
+      </div>
+      <div className={styles["product-info"]}>
         <div>
           <p>${product.price}</p>
           <p>{product.title}</p>
         </div>
         {!addedToCart ? (
           <figure
-            className="ProductItem__button-add-to-cart"
+            className={styles["ProductItem__button-add-to-cart"]}
             onClick={() => handleAdd(product)}
           >
-            <img src={iconCartAdd} alt="Add to cart" />
+            <Image src={iconCartAdd} alt="Add to cart" />
           </figure>
         ) : (
-          <figure className="ProductItem__button-added-to-cart">
-            <img src={iconCartAdded} alt="Add to cart" />
+          <figure className={styles["ProductItem__button-added-to-cart"]}>
+            <Image src={iconCartAdded} alt="Add to cart" />
           </figure>
         )}
       </div>

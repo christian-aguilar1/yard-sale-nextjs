@@ -2,12 +2,13 @@ import React from "react";
 import "../styles/pages/PasswordRecovery.scss";
 
 import logo from "../assets/logos/logo_yard_sale.svg";
+import Image from "next/image";
 
 const PasswordRecovery = () => {
   return (
     <div className="PasswordRecovery">
       <div className="PasswordRecovery-container">
-        <img src={logo} alt="logo" className="logo" />
+        <Image src={logo} alt="logo" className="logo" />
         <h1 className="PasswordRecovery-title">Password recovery</h1>
         <p className="subtitle">
           Inform the email address used to create your account

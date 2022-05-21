@@ -1,12 +1,14 @@
 import React from "react";
-import "../styles/components/ProductInfo.scss";
+import Image from "next/image";
 
 import iconCart from "@icons/bt_add_to_cart.svg";
+
+import "../styles/components/ProductInfo.scss";
 
 const ProductInfo = () => {
   return (
     <>
-      <img
+      <Image
         src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
         alt="bike"
       />
@@ -18,7 +20,7 @@ const ProductInfo = () => {
           function, add your hall or workspace.
         </p>
         <button className="primary-button add-to-cart-button">
-          <img src={iconCart} alt="add to cart" />
+          <Image src={iconCart} alt="add to cart" />
           Add to cart
         </button>
       </div>

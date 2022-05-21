@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
+import Image from "next/image";
+
 import { AppContext } from "../context/AppContext";
+
 import OrderItem from "../components/OrderItem";
 
-import "../styles/MyOrder.scss";
 import iconArrow from "../assets/icons/arrow.svg";
+
+import styles from "styles/MyOrder.module.scss";
 
 const MyOrder = () => {
   const { state } = useContext(AppContext);
@@ -17,12 +21,12 @@ const MyOrder = () => {
   };
 
   return (
-    <aside className="MyOrder">
-      <div className="MyOrder__title-container">
-        <img src={iconArrow} alt="arrow" />
-        <p className="MyOrder__title">My order</p>
+    <aside className={styles.MyOrder}>
+      <div className={styles["MyOrder__title-container"]}>
+        <Image src={iconArrow} alt="arrow" />
+        <p className={styles["MyOrder__title"]}>My order</p>
       </div>
-      <div className="my-order-content">
+      <div className={styles["my-order-content"]}>
         {state.cart.length > 0 ? (
           state.cart.map((product, index) => (
             <OrderItem
@@ -31,17 +35,17 @@ const MyOrder = () => {
             />
           ))
         ) : (
-          <p className="MyOrder__empty-cart">
+          <p className={styles["MyOrder__empty-cart"]}>
             Aún no tienes productos agregados
           </p>
         )}
-        <div className="MyOrder__order">
+        <div className={styles["MyOrder__order"]}>
           <p>
             <span>Total</span>
           </p>
           <p>{formatPrice(state.total)}</p>
         </div>
-        <button className="primary-button">Checkout</button>
+        <button className={styles["primary-button"]}>Checkout</button>
       </div>
     </aside>
   );

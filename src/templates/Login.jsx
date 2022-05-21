@@ -20,7 +20,7 @@ const Login = () => {
   return (
     <div className="Login">
       <div className="Login-container">
-        <img src={logo} alt="logo" className="logo" />
+        <Image src={logo} alt="logo" className="logo" />
 
         <form action="/" className="form" ref={form}>
           <label htmlFor="email" className="label">

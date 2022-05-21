@@ -1,4 +1,4 @@
-@use "../_vars";
+@import '../_vars';
 
 .Checkout {
   width: 100%;
@@ -8,7 +8,7 @@
 }
 
 .title {
-  font-size: var(--lg);
+  font-size: $--lg;
   margin-bottom: 40px;
 }
 
@@ -28,7 +28,7 @@
   grid-template-columns: auto 1fr;
   gap: 16px;
   align-items: center;
-  background-color: var(--text-input-field);
+  background-color: $--text-input-field;
   margin-bottom: 24px;
   border-radius: 8px;
   padding: 0 24px;
@@ -52,13 +52,13 @@
 }
 .order p span:nth-child(1),
 .orders p span:nth-child(1) {
-  font-size: var(--md);
+  font-size: $--md;
   font-weight: bold;
 }
 .order p span:nth-child(2),
 .orders p span:nth-child(2) {
-  font-size: var(--sd);
-  color: var(--very-light-pink);
+  font-size: $--sd;
+  color: $--very-light-pink;
 }
 
 .shopping-cart {
@@ -78,9 +78,9 @@
   object-fit: cover;
 }
 .shopping-cart p:nth-child(2) {
-  color: var(--very-light-pink);
+  color: $--very-light-pink;
 }
 .shopping-cart p:nth-child(3) {
-  font-size: var(--md);
+  font-size: $--md;
   font-weight: bold;
 }
