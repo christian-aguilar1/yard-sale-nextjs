@@ -16,8 +16,8 @@ const ProductInfo = () => {
         <p>$35,00</p>
         <p>Bike</p>
         <p>
-          With its practical position, this bike also fulfills a decorative
-          function, add your hall or workspace.
+          With its practical position, this bike also fulfills a decorative function, add your hall
+          or workspace.
         </p>
         <button className="primary-button add-to-cart-button">
           <Image src={iconCart} alt="add to cart" />
