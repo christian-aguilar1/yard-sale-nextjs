@@ -3,7 +3,7 @@
 .Nav {
   display: flex;
   justify-content: space-between;
-  padding: 0 51px;
+  padding: 0 30px;
   height: 60px;
   border-bottom: 1px solid $--white;
   box-sizing: border-box;
@@ -17,9 +17,6 @@
 }
 .logo-navbar {
   cursor: pointer;
-  width: 144px;
-  height: 30px;
-  /* margin-bottom: 24px; */
 }
 .navbar-left ul,
 .navbar-right ul {

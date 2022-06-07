@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { AppContext } from "../context/AppContext";
 
@@ -29,15 +30,10 @@ const MyOrder = () => {
       <div className={styles["my-order-content"]}>
         {state.cart.length > 0 ? (
           state.cart.map((product, index) => (
-            <OrderItem
-              key={`orderItem-${index}-${product.id}`}
-              product={product}
-            />
+            <OrderItem key={`orderItem-${index}-${product.id}`} product={product} />
           ))
         ) : (
-          <p className={styles["MyOrder__empty-cart"]}>
-            Aún no tienes productos agregados
-          </p>
+          <p className={styles["MyOrder__empty-cart"]}>Aún no tienes productos agregados</p>
         )}
         <div className={styles["MyOrder__order"]}>
           <p>
@@ -45,7 +41,9 @@ const MyOrder = () => {
           </p>
           <p>{formatPrice(state.total)}</p>
         </div>
-        <button className={styles["primary-button"]}>Checkout</button>
+        <Link className={styles["primary-button"]} href="/checkout">
+          Checkout
+        </Link>
       </div>
     </aside>
   );

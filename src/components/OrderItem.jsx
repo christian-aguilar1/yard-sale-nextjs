@@ -9,7 +9,7 @@ import styles from "styles/components/OrderItem.module.scss";
 const OrderItem = ({ product }) => {
   const { removeFromCart } = useContext(AppContext);
 
-  console.log("product", product)
+  console.log("product", product);
 
   const handleRemoveProduct = (product) => {
     removeFromCart(product);

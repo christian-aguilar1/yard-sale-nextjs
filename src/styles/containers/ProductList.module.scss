@@ -1,0 +1,13 @@
+@import "../_vars.scss";
+
+.main-container {
+  margin: 43px 52px;
+}
+
+.ProductList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 227px);
+  gap: 26px;
+  place-content: center;
+  margin: 3em 0 0 0;
+}
