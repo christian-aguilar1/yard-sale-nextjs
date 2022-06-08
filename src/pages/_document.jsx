@@ -5,7 +5,10 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>{/* sdas */}</Head>
+        <Head>
+          <meta charSet="utf8" />
+          <link rel="manifest" href="/manifest.json" />
+        </Head>
         <body>
           <Main />
           <NextScript />
